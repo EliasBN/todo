@@ -9,3 +9,12 @@ Software:
 Visual Studio Code with prettier for code structure. 
 
 How to commit to our project: 
+
+Fork github repo. 
+Clone it locally to your computer. 
+Create a new branch.
+Do your work on that branch. 
+(?) merge your work with the development branch when finished. 
+Issue a pull-request to the repo. 
+
+--No code will be accepted without at least 2 people agreeing to the changes--
