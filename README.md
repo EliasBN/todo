@@ -18,6 +18,11 @@ Master branch: only gets pushed to from the development branch when everything i
 
 Software: 
 Visual Studio Code with prettier for code structure. 
+Express 
+Node
+Sequalize
+postgres
+
 
 How to commit to our project: 
 
