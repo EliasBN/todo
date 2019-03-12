@@ -8,12 +8,15 @@ Please visit [getting started](github.com/EliasBN/todo) if you want to learn mor
 3. Start the application with npm start
 4. Visit localhost:8080 to see the result. 
 
-## How to Commit to project
+## Project Structure
 Individual branch: When working on a new feature you will work on your own branch. When the feature is ready you will merge the development branch into your individual branch. You will then clean up any conflicts in your own branch, before you can suggest your feature for the project. This ensures that the development branch remains clean. 
 
 Development Branch: Can only get pushed to when two other group members have approved the commit. If something is not good enough the code has to get refactored according to the wishes of the other members, and then it will go through another round of Q/A. 
 
 Master branch: only gets pushed to from the development branch when everything is working properly.
+
+## How to Commit to project
+
 
 
 Software: 
