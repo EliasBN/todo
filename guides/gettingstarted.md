@@ -13,14 +13,14 @@ Everything related to the exchange and improvement of code and ideas is done thr
 ## Building and running the application locally
 1. Clone the project from https://github.com/EliasBN/todo
 	
-`$ git clone git@github.com:EliasBN/todo.git` with SSH 
-`$ git clone https://github.com/EliasBN/todo.git` with HTTPS
+`$ git clone git@github.com:EliasBN/todo.git` with SSH  
+`$ git clone https://github.com/EliasBN/todo.git` with HTTPS  
 
 2. Install dependencies with npm install
-navigate to the cloned directory using the command-line.
+navigate to the cloned directory using the command-line.  
 `$ npm install`
 
-3. Start the application with npm start
+3. Start the application with npm start  
 `$ npm start`
 
 4. Visit localhost:8080 to see the result. 
