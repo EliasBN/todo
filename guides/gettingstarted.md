@@ -10,6 +10,13 @@ The entire backend of our application is written in Node.js. Because of this all
 
 Everything related to the exchange and improvement of code and ideas is done through git. If you don't already have it installed then this can be done from https://git-scm.com/downloads
 
+
+## PostgreSQL
+
+Since our project is supposed to be entirely open-source we have chosen to use PostgreSQL for our backend. You can download this from: https://www.postgresql.org/download/
+We connect to the database by using sequalize, and a json file with all the database login info. This is called config.json and is placed in a folder called conig inside the server folder. Make sure that this is then added to your .gitignore so you don't share personal information. 
+
+
 ## Building and running the application locally
 1. Clone the project from https://github.com/EliasBN/todo
 	
@@ -17,10 +24,40 @@ Everything related to the exchange and improvement of code and ideas is done thr
 `$ git clone https://github.com/EliasBN/todo.git` with HTTPS  
 
 2. Install dependencies with npm install
-navigate to the cloned directory using the command-line.  
+navigate to the cloned directory using the command-line. Then run   
 `$ npm install`
 
-3. Start the application with npm start  
-`$ npm start`
+3. Setup database connection
+Create a new folder called config inside the server folder. Create config.json inside the config folder. Add your db-login. 
 
-4. Visit localhost:8080 to see the result. 
+Example:
+```
+{
+    "development": {
+      "username": "postgres",
+      "password": 12345,
+      "database": "postgres",
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "test": {
+      "username": "postgres",
+      "password": 12345,
+      "database": "postgres",
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "production": {
+      "username": "postgres",
+      "password": 12345,
+      "database": "postgres",
+      "host": "localhost",
+      "dialect": "postgres"
+    }
+  }
+```
+
+4. Start the application with npm start  
+`$ npm start:dev` This will run the development server referenced above
+
+5. Visit localhost:8000 to see the result. 
