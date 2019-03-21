@@ -11,30 +11,35 @@ import Header from "./Header";
 class App extends Component {
   state = {
     todo: [],
+    todoItem: [],
     pendingItem: ""
   };
 
   componentDidMount() {
+    this.getTodos();
+  }
+
+  getTodos = () => {
     axios.get("api/todos").then(res => {
       const todo = res.data;
       this.setState({ todo });
     });
-  }
-
-  /*
-  getTodos = _ => {
-    fetch("/api/todos", {
-      method: "GET",
-      body: JSON.stringify(todo),
-      headers: { "Content-Type": "application/json" }
-    })
-      .then(response => response.json())
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch(err => console.error(err));
   };
-*/
+
+  postTodo = () => {
+    axios
+      .post("/api/todos", {
+        id: 5,
+        content: "Hei alle sammen dette er fra react"
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
   lastItemId = 0;
 
   newItemId = () => {
@@ -43,21 +48,11 @@ class App extends Component {
     return id;
   };
 
-  callBackendApi = async () => {
-    const resp = await fetch("/api/todos");
-    const body = await resp.json();
-
-    if (resp.status !== 200) {
-      throw Error(body.message);
-    }
-    return body;
-  };
-
   // Flips isEditing bool
   toggleIsEditingAt = id => {
     console.log("isEditingAt", id);
     this.setState({
-      list: this.state.list.map(item => {
+      todo: this.state.todo.map(item => {
         if (id === item.id) {
           return {
             ...item,
