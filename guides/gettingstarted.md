@@ -32,7 +32,7 @@ You can of course use whatever IDE you want, but for our development we prefer u
 - Her tenker jeg at vi kommer på noen gode prinsipper vi kan følge.
 - Hvis ikke kan dette bare fjernes
 
-## Building and running the application locally
+# Building and running the application locally
 
 1. Clone the project from https://github.com/EliasBN/todo
 

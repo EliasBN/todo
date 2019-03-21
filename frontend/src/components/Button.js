@@ -1,25 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = props => {
-  if (props.isEditing) {
-    return (
-      <button className="action" onClick={props.toggleIsEditingAt}>
-        save
-      </button>
-    );
-  }
+export default function Button({ onClick, content, className }) {
   return (
-    <button className="action" onClick={props.handleRemove}>
-      x
+    <button className={className} onClick={() => onClick()}>
+      {content}
     </button>
   );
-};
+}
 
 Button.propTypes = {
-  handleRemove: PropTypes.func.isRequired,
-  toggleIsEditingAt: PropTypes.func.isRequired,
-  isEditing: PropTypes.bool.isRequired
+  onClick: PropTypes.func.isRequired,
+  content: PropTypes.anyOf(PropTypes.string, objectOf(PropTypes.any)),
+  className: PropTypes.string
 };
 
-export default Button;
+Button.defaultValues = {
+  content: "",
+  className: "button-component"
+};
