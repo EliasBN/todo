@@ -1,37 +1,41 @@
 # TODO-List
-This is a completely open-source todolist. It was created for a subject at the Norwegian University of Agder, where the goal was creating something with only open-source components. The application uses React for frontend, with node and express making out the backend, together with a Postgresql server. Our goal is to make this application easy for anyone else to build on, something we will accomplish by both making it easily accessable through this github page, with tutorials on how new users can both use, and contribute to the project. 
 
-Please visit [getting started](https://github.com/EliasBN/todo/blob/elias/guides/gettingstarted.md) if you want to learn how to contribute. If you simply want to know how we've created this application then you can read about the structure and software used further down on this document. 
+This is a completely open-source todolist. It was created for a subject at the Norwegian University of Agder, where the goal was creating something with only open-source components. The application uses React for frontend, with node and express making out the backend, together with a Postgresql server. Our goal is to make this application easy for anyone else to build on, something we will accomplish by both making it easily accessable through this github page, with tutorials on how new users can both use, and contribute to the project.
 
-
-
+Please visit [getting started](https://github.com/EliasBN/todo/blob/elias/guides/gettingstarted.md) if you want to learn how to contribute. If you simply want to know how we've created this application then you can read about the structure and software used further down on this document.
 
 ## Project Structure
 
+Individual branch: When working on a new feature you will work on your own branch. When the feature is ready you will merge the development branch into your individual branch. You will then clean up any conflicts in your own branch, before you can suggest your feature for the project. This ensures that the development branch remains clean.
 
-
-Individual branch: When working on a new feature you will work on your own branch. When the feature is ready you will merge the development branch into your individual branch. You will then clean up any conflicts in your own branch, before you can suggest your feature for the project. This ensures that the development branch remains clean. 
-
-Development Branch: Can only get pushed to when two other group members have approved the commit. If something is not good enough the code has to get refactored according to the wishes of the other members, and then it will go through another round of Q/A. 
+Development Branch: Can only get pushed to when two other group members have approved the commit. If something is not good enough the code has to get refactored according to the wishes of the other members, and then it will go through another round of Q/A.
 
 Master branch: only gets pushed to from the development branch when everything is working properly.
 
 ## Software used
 
-
 ### Visual Studio Code
--Insert beskrivelse
+
+You can of course use whatever IDE you want, but for our development we prefer using Visual Studio Code with the Prettier Extension installed to keep all the code formatted the same. This helps ensure code that is easily read, even when written by new developers. Other than this there are some other standards that we try to keep. There are:
+
+- Her tenker jeg at vi kommer på noen gode prinsipper vi kan følge.
+- Hvis ikke kan dette bare fjernes
+-
 
 ### Node.js
+
 -Insert beskrivelse
 
 ### Express
+
 -Insert beskrivelse
 
 ### Sequalize
+
 -Insert beskrivelse
 
 ### PostgreSQL
+
 -Insert beskrivelse
 
 --No code will be accepted without at least 2 people agreeing to the changes--
