@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TextInput from "../components/TextInput";
 import Button from "../components/Button";
+import TextArea from "../components/TextArea";
 
 class Todo extends Component {
   constructor(props) {
@@ -30,11 +31,13 @@ class Todo extends Component {
 
     return (
       <div>
-        <form onSubmit={this.submitTodo}>
-          <TextInput onChange={this.onChange} value={this.state.textInput} />
-          <Button title="Bø" />
-          {todos}
-        </form>
+        <div class="container">
+          <form onSubmit={this.submitTodo}>
+            <TextArea onChange={this.onChange} value={this.state.textInput} />
+            <Button title="Add Todo" />
+          </form>
+          <ul class="collection">{todos}</ul>
+        </div>
       </div>
     );
   }

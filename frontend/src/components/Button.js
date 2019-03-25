@@ -5,7 +5,6 @@ export default function Button({ onClick, value, className, title, type }) {
   return (
     <div>
       <button type={type} onClick={onClick} value={value} className={className}>
-        {" "}
         {title}
       </button>
     </div>
@@ -22,7 +21,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   value: "press me",
-  className: "btn-primary",
+  className: "btn waves-effect waves-light",
   title: "Dette er tittel",
   type: "submit"
 };
