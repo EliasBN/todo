@@ -6,21 +6,25 @@ If you want to contribute to the project this can be done by both trying it out 
 
 Everything related to the exchange and improvement of code and ideas is done through git. If you don't already have it installed then this can be done from https://git-scm.com/downloads
 
+## React
+
+-Info om react her (Det kan noen andre fikse)
+
+### Axios
+
+-Axios brukes i react. få inn mer info
+
 ## Node.js
 
 The entire backend of our application is written in Node.js. Because of this all dependencies are managed by npm, which makes the installation very quick for new users, as long as they have node installed. This can be done easily from https://nodejs.org/
 
 ### Sequalize
 
-Sequalize is a Node.js object-relational mapping tool (ORM) that we use to communicate with our postgres database. Sequalize works by mapping database entries to objects (and objects to database entries). We use Sequalize because it offers good database synchronization, loading, and easily done migrations. Sequalize somewhat serves as the "model" part of a standard MVC architecture. <b>vet ikke om vi skal ha siste linja her <b>
+Sequalize is a Node.js object-relational mapping tool (ORM) that we use to communicate with our postgres database. Sequalize works by mapping database entries to objects (and objects to database entries). We use Sequalize because it offers good database synchronization, loading, and easily done migrations. Sequalize somewhat serves as the "model" part of a standard MVC architecture. <b>vet ikke om vi skal ha siste linja her </b>
 
 ### Express
 
--Få inn noe om express.
-
-### Axios
-
--Få inn info om axios
+Express is a node.js web framework. It helps us manage the routes used to access our data, and serves as the "backbone" of our Rest-api.
 
 ## PostgreSQL
 
@@ -28,6 +32,8 @@ Since our project is supposed to be entirely open-source we have chosen to use P
 We connect to the database by using sequalize, and a json file with all the database login info. This is called config.json and is placed in a folder called conig inside the server folder. Make sure that this is then added to your .gitignore so you don't share personal information.
 
 ## Other Software
+
+While software mentioned here is not mandatory, it can be a good starting point for those who are inexperienced.
 
 ### Visual Studio Code
 
