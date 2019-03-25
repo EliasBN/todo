@@ -1,21 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Button({ onClick, content, className }) {
+export default function Button({ onClick, value, className, title, type }) {
   return (
-    <button className={className} onClick={() => onClick()}>
-      {content}
-    </button>
+    <div>
+      <button type={type} onClick={onClick} value={value} className={className}>
+        {" "}
+        {title}
+      </button>
+    </div>
   );
 }
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  content: PropTypes.anyOf(PropTypes.string, objectOf(PropTypes.any)),
-  className: PropTypes.string
+  type: PropTypes.string,
+  onClick: PropTypes.func,
+  value: PropTypes.string,
+  className: PropTypes.string,
+  title: PropTypes.string
 };
 
-Button.defaultValues = {
-  content: "",
-  className: "button-component"
+Button.defaultProps = {
+  value: "press me",
+  className: "btn-primary",
+  title: "Dette er tittel",
+  type: "submit"
 };
