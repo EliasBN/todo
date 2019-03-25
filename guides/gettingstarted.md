@@ -12,11 +12,15 @@ The entire backend of our application is written in Node.js. Because of this all
 
 ### Sequalize
 
--Få inn noe om sequalize.
+Sequalize is a Node.js object-relational mapping tool (ORM) that we use to communicate with our postgres database. Sequalize works by mapping database entries to objects (and objects to database entries). We use Sequalize because it offers good database synchronization, loading, and easily done migrations. Sequalize somewhat serves as the "model" part of a standard MVC architecture. <b>vet ikke om vi skal ha siste linja her <b>
 
 ### Express
 
 -Få inn noe om express.
+
+### Axios
+
+-Få inn info om axios
 
 ## PostgreSQL
 
@@ -79,12 +83,10 @@ Example:
 
 5. Visit localhost:8000 to see the result.
 
-# How to contribute
+# How to contribute with code
 
 ## Project Structure --Gonna be changed to a how to contribute guide.
 
-Individual branch: When working on a new feature you will work on your own branch. When the feature is ready you will merge the development branch into your individual branch. You will then clean up any conflicts in your own branch, before you can suggest your feature for the project. This ensures that the development branch remains clean.
+To ensure good quality there are some precautions that we take when it comes to others contributing. As of now, every pull request must be accepted by at least two members of our original little team. This will of course change in the future if we get some good, "outside" collaborators, but that is the way it is now. If there are things that could be improved in the pull-request, then these have to be fixed before you do another one.
 
-Development Branch: Can only get pushed to when two other group members have approved the commit. If something is not good enough the code has to get refactored according to the wishes of the other members, and then it will go through another round of Q/A.
-
-Master branch: only gets pushed to from the development branch when everything is working properly.
+Once a pull-request is accepted the new feature will live on the experimental branch. Here we will do more testing and possible polishing, before moving it on to the development branch where most of the decent, working code will be located. The master branch will only be used to store things we consider "release" ready.
