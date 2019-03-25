@@ -11,22 +11,18 @@ export default function TextArea({
 }) {
   return (
     <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix" />
-            <textarea
-              id={id}
-              class={className}
-              rows={rows}
-              onChange={onChange}
-              name={name}
-              value={value}
-            />
-            <label for="icon_prefix2" />
-          </div>
-        </div>
-      </form>
+      <div class="input-field col s12">
+        <textarea
+          data-length="120"
+          id={id}
+          class={className}
+          rows={rows}
+          onChange={onChange}
+          name={name}
+          value={value}
+        />
+        <label for="textarea2" />
+      </div>
     </div>
   );
 }

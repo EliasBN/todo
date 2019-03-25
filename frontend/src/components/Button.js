@@ -6,6 +6,7 @@ export default function Button({ onClick, value, className, title, type }) {
     <div>
       <button type={type} onClick={onClick} value={value} className={className}>
         {title}
+        <i class="material-icons right">send</i>
       </button>
     </div>
   );
