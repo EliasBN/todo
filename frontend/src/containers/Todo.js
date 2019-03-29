@@ -36,7 +36,7 @@ class Todo extends Component {
             <TextArea onChange={this.onChange} value={this.state.textInput} />
             <Button title="Add Todo" />
           </form>
-          <br />
+
           <ul class="collection">{todos}</ul>
         </div>
       </div>
