@@ -23,3 +23,5 @@ This is everything you need to do if you want to run the application. If you how
 --Insert picture of todolist when at a decent state.
 
 ## More info
+
+- Write about axios? 

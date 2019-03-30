@@ -64,7 +64,7 @@ We connect to the database by using sequalize, and a json file with all the data
 
 ## Other Software
 
-While software mentioned here is not mandatory, it can be a good starting point for those who are inexperienced.
+While software mentioned here is not mandatory, it can be a good starting point for those who are inexperienced. 
 
 ### Visual Studio Code
 

@@ -7,7 +7,12 @@ const List = props => {
       <li class="collection-header">
         <h4>MY TODO LIST</h4>
         {props.list.map((item, index) => (
-          <TodoItem key={index} item={item.name} />
+          <TodoItem
+            key={index}
+            index={index}
+            item={item}
+            handleDelete={props.handleDelete}
+          />
         ))}
       </li>
     </ul>

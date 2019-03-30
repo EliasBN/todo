@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import InputForm from "./components/InputForm";
 import TodoList from "./components/TodoList";
 
+window.id = 0;
 class Todo extends Component {
   constructor(props) {
     super(props);
@@ -13,10 +14,16 @@ class Todo extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.submitTodo = this.submitTodo.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   onChange(event) {
     this.setState({ textInput: event.target.value });
+  }
+
+  handleDelete(index) {
+    this.state.todos.splice(index, 1);
+    this.setState({ todos: this.state.todos });
   }
 
   submitTodo(event) {
@@ -43,7 +50,7 @@ class Todo extends Component {
             title="+"
           />
 
-          <TodoList list={this.state.todos} />
+          <TodoList list={this.state.todos} handleDelete={this.handleDelete} />
         </div>
       </div>
     );
