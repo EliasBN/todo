@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Button from "../../components/Button";
-import TextArea from "../../components/TextArea";
+import InputForm from "./components/InputForm";
 import TodoList from "./components/TodoList";
 
 class Todo extends Component {
@@ -37,10 +36,12 @@ class Todo extends Component {
     return (
       <div>
         <div class="container">
-          <form onSubmit={this.submitTodo}>
-            <TextArea onChange={this.onChange} value={this.state.textInput} />
-            <Button title="Add Todo" />
-          </form>
+          <InputForm
+            onSubmit={this.submitTodo}
+            onChange={this.onChange}
+            value={this.state.textInput}
+            title="+"
+          />
 
           <TodoList list={this.state.todos} />
         </div>

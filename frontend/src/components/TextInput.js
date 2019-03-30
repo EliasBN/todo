@@ -23,6 +23,6 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   value: "",
-  className: "form-control",
+  className: "",
   type: "text"
 };

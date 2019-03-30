@@ -22,7 +22,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   value: "press me",
-  className: "btn waves-effect waves-light",
-  title: "Dette er tittel",
+  className: "btn waves-effect waves-light btn-small",
+  title: "Add",
   type: "submit"
 };
