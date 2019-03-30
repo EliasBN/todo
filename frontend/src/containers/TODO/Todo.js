@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import TextInput from "../components/TextInput";
-import Button from "../components/Button";
-import TextArea from "../components/TextArea";
+import Button from "../../components/Button";
+import TextArea from "../../components/TextArea";
+import TodoList from "./components/TodoList";
 
 class Todo extends Component {
   constructor(props) {
@@ -22,13 +22,18 @@ class Todo extends Component {
 
   submitTodo(event) {
     event.preventDefault();
-    this.setState({ todos: [...this.state.todos, this.state.textInput] });
-    this.setState({ textInput: "" });
+    this.setState({
+      todos: [
+        {
+          name: this.state.textInput
+        },
+        ...this.state.todos
+      ],
+      textInput: ""
+    });
   }
 
   render() {
-    const todos = this.state.todos.map(item => <li>{item}</li>);
-
     return (
       <div>
         <div class="container">
@@ -37,7 +42,7 @@ class Todo extends Component {
             <Button title="Add Todo" />
           </form>
 
-          <ul class="collection">{todos}</ul>
+          <TodoList list={this.state.todos} />
         </div>
       </div>
     );

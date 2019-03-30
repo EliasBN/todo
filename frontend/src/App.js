@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-import TodoItem from "./containers/TodoItem";
-import Todo from "./containers/Todo";
+import Todo from "./containers/TODO/Todo";
 
 class App extends Component {
   render() {
