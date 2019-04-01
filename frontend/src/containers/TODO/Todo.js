@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import InputForm from "./components/InputForm";
 import TodoList from "./components/TodoList";
 
-window.id = 0;
 class Todo extends Component {
   constructor(props) {
     super(props);
@@ -22,19 +21,19 @@ class Todo extends Component {
   }
 
   handleDelete(index) {
-    this.state.todos.splice(index, 1);
-    this.setState({ todos: this.state.todos });
+    this.setState(({ todos }) => {
+      const nTodos = [...todos];
+      nTodos.splice(index, 1);
+      return { todos: nTodos };
+    });
   }
 
   submitTodo(event) {
     event.preventDefault();
+    const value = this.state.textInput;
+
     this.setState({
-      todos: [
-        {
-          name: this.state.textInput
-        },
-        ...this.state.todos
-      ],
+      todos: [...this.state.todos, value],
       textInput: ""
     });
   }
