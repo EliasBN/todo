@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InputForm from "./components/InputForm";
 import TodoList from "./components/TodoList";
+import axios from "axios";
 
 class Todo extends Component {
   constructor(props) {
@@ -8,12 +9,24 @@ class Todo extends Component {
 
     this.state = {
       textInput: "",
-      todos: []
+      todos: [],
+      id: 0,
+      title: null,
+      createdAt: null,
+      updatedAt: null,
+      todoItems: []
     };
 
     this.onChange = this.onChange.bind(this);
     this.submitTodo = this.submitTodo.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  async componentDidMount() {
+    axios
+      .get("/api/todos")
+      .then(response => this.setState({ todos: response.data }))
+      .catch(err => console.log(err));
   }
 
   onChange(event) {
