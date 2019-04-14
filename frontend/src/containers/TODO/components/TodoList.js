@@ -8,7 +8,7 @@ const List = props => {
         <h4>My Lists</h4>
         {props.list.map(item => (
           <TodoItem
-            onClick={props.onClick}
+            chooseList={props.chooseList}
             id={item.id}
             key={item.id}
             title={item.title}

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import InputForm from "./components/InputForm";
 import TodoList from "./components/TodoList";
 import axios from "axios";
-import { Route, Link } from "react-router-dom";
 
 class Todo extends Component {
   constructor(props) {
@@ -58,11 +57,10 @@ class Todo extends Component {
   }
 
   async chooseList(id) {
-    alert("Test" + id);
+    this.props.history.push(`/todos/${id}`);
   }
 
   render() {
-    const { url } = this.props.match;
     return (
       <div>
         <div class="container">
@@ -77,7 +75,7 @@ class Todo extends Component {
             list={this.state.todos}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit}
-            onClick={this.chooseList}
+            chooseList={this.chooseList}
           />
         </div>
       </div>

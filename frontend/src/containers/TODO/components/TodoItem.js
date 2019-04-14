@@ -10,7 +10,7 @@ export default function TodoItem({
   updatedAt,
   handleDelete,
   handleEdit,
-  onClick
+  chooseList
 }) {
   return (
     <li class="collection-item">
@@ -32,7 +32,7 @@ export default function TodoItem({
       <button
         className="waves-effect waves-light btn"
         onClick={() => {
-          onClick(id);
+          chooseList(id);
         }}
       >
         <i class="material-icons">arrow_right_alt</i>
