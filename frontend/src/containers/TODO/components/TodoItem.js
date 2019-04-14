@@ -16,8 +16,8 @@ export default function TodoItem({
     <li class="collection-item">
       <div class="row">
         <div class="col s12 m6">
-          <div class="card blue">
-            <div class="card-content white-text">
+          <div class="card ">
+            <div class="card-content">
               <span class="card-title">{title}</span>
               <div class="card-content">
                 {createdAt}
@@ -28,36 +28,35 @@ export default function TodoItem({
             </div>
           </div>
         </div>
-
-        <button
-          style={styling}
-          className="btn-floating btn-small waves-effect waves-light blue"
-          onClick={() => {
-            handleDelete(id);
-          }}
-        >
-          <i class="material-icons">not_interested</i>
-        </button>
-
-        <button
-          style={styling}
-          className="btn-floating btn-small waves-effect waves-light blue"
-          onClick={() => {
-            handleEdit(id);
-          }}
-        >
-          <i class="material-icons">autorenew</i>
-        </button>
-
-        <button
-          className="waves-effect waves-light btn"
-          onClick={() => {
-            onClick(id);
-          }}
-        >
-          <i class="material-icons">arrow_right_alt</i>
-        </button>
       </div>
+      <button
+        className="waves-effect waves-light btn"
+        onClick={() => {
+          onClick(id);
+        }}
+      >
+        <i class="material-icons">arrow_right_alt</i>
+      </button>
+
+      <button
+        style={styling}
+        className="waves-effect waves-light btn"
+        onClick={() => {
+          handleEdit(id);
+        }}
+      >
+        <i class="material-icons">build</i>
+      </button>
+
+      <button
+        style={styling}
+        className="waves-effect waves-light btn"
+        onClick={() => {
+          handleDelete(id);
+        }}
+      >
+        <i class="material-icons">not_interested</i>
+      </button>
     </li>
   );
 }
