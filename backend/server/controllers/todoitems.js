@@ -45,5 +45,16 @@ module.exports = {
           .catch(error => res.status(400).send(error));
       })
       .catch(error => res.status(400).send(error));
+  },
+
+  list(req, res) {
+    return TodoItem.findAll({
+      where: {
+        //This cant be hard-coded.
+        todoId: req.params.todoId
+      }
+    })
+      .then(todos => res.status(200).send(todos))
+      .catch(error => res.status(400).send(error));
   }
 };

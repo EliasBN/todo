@@ -1,28 +1,28 @@
 import React, { Component } from "react";
-import InputForm from "./components/InputForm";
-import TodoList from "./components/TodoList";
 import axios from "axios";
+import MyTodoList from "./components/MyTodoList";
+import InputForm from "../TODO/components/InputForm";
 
-class Todo extends Component {
+export default class MyTodo extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       textInput: "",
       textEdit: "",
-      todos: []
+      todoItems: []
     };
-
     this.onChange = this.onChange.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
-    this.chooseList = this.chooseList.bind(this);
   }
 
   async componentDidMount() {
-    const { data: todos } = await axios.get("/api/todos");
-    this.setState({ todos });
+    const { data: todoItems } = await axios.get(
+      `/api/todos/${this.props.match.params.id}/todoItems`
+    );
+    this.setState({ todoItems });
   }
 
   onChange(event) {
@@ -31,7 +31,7 @@ class Todo extends Component {
 
   async handleDelete(id) {
     await axios.delete(`/api/todos/${id}`);
-    let todoListCopy = this.state.todos;
+    let todoListCopy = this.state.todoItems;
     for (let i = 0; i < todoListCopy.length; i++) {
       let todo = todoListCopy[i];
       if (todo.id === id) {
@@ -39,25 +39,24 @@ class Todo extends Component {
         break;
       }
     }
-    this.setState({ todos: todoListCopy });
+    this.setState({ todoItems: todoListCopy });
   }
 
   async handleAdd() {
-    const obj = { title: this.state.textInput };
-    const { data: todo } = await axios.post("/api/todos/", obj);
-    const currentState = this.state.todos;
-    this.setState({ todos: currentState.concat(todo), textInput: "" });
+    const obj = { content: this.state.textInput };
+    const { data: todo } = await axios.post(
+      `/api/todos/${this.props.match.params.id}/items`,
+      obj
+    );
+    const currentState = this.state.todoItems;
+    this.setState({ todoItems: currentState.concat(todo), textInput: "" });
   }
 
   async handleEdit(id) {
     const todoToEdit = this.state.textEdit;
     const { data } = await axios.put(`/api/todo/${id}/edit`, todoToEdit);
     const currentState = this.state.todos;
-    this.setState({ todos: currentState.concat(todoToEdit) });
-  }
-
-  async chooseList(id) {
-    this.props.history.push(`/todos/${id}/todoItems`);
+    this.setState({ todoItems: currentState.concat(todoToEdit) });
   }
 
   render() {
@@ -71,16 +70,13 @@ class Todo extends Component {
             title="+"
           />
 
-          <TodoList
-            list={this.state.todos}
+          <MyTodoList
+            list={this.state.todoItems}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit}
-            chooseList={this.chooseList}
           />
         </div>
       </div>
     );
   }
 }
-
-export default Todo;
