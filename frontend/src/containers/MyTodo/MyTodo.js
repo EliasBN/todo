@@ -57,16 +57,16 @@ export default class MyTodo extends Component {
     this.setState({ todoItems: currentState.concat(todo), textInput: "" });
   }
 
-  async handleEdit(todo) {
-    console.log(todo);
-    todo.content = this.state.textEdit;
+  async handleEdit(id) {
+    console.log(id);
+    let content = this.state.textEdit;
     const { data } = await axios.put(
-      `/api/todos/${this.props.match.params.id}/items/${todo}`,
-      todo
+      `/api/todos/${this.props.match.params.id}/items/${id}`,
+      content
     );
     const currentState = [...this.state.todoItems];
-    const index = currentState.indexOf(todo);
-    currentState[index] = todo;
+    const index = currentState.indexOf(content);
+    currentState[index] = content;
     this.setState({ currentState });
   }
 
