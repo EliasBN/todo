@@ -6,19 +6,19 @@ import MyTodoItem from "./MyTodoItem";
 const List = props => {
   return (
     <div>
-      <h4>{props.name}</h4>
       {props.list.map(item => (
         <MyTodoItem
-          chooseList={props.chooseList}
-          id={item.id}
           key={item.id}
+          keys={item.id}
+          id={item.id}
           content={item.content}
           createdAt={item.createdAt}
           updatedAt={item.updatedAt}
           handleDelete={props.handleDelete}
+          onChange={props.onChange}
+          value={props.value}
+          onSubmit={props.onSubmit}
           handleEdit={props.handleEdit}
-          todoId={props.todoId}
-          inputForm={props.inputForm}
         />
       ))}
     </div>

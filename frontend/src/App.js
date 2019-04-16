@@ -21,7 +21,7 @@ export default class App extends Component {
             <Route exact path="/todos" component={Todo} />
             <Route
               exact
-              path="/todos/:id/todoItems/:todoItemId/edit"
+              path="/todos/:id/todoItems/:todoItemId/"
               component={MyTodo}
             />
             <Route path="/todos/:id/todoItems/" component={MyTodo} />

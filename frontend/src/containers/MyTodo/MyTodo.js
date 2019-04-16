@@ -58,16 +58,13 @@ export default class MyTodo extends Component {
   }
 
   async handleEdit(id) {
-    console.log(id);
-    let content = this.state.textEdit;
-    const { data } = await axios.put(
+    let obj = { content: this.state.textEdit };
+    const { data: todo } = await axios.put(
       `/api/todos/${this.props.match.params.id}/items/${id}`,
-      content
+      obj
     );
-    const currentState = [...this.state.todoItems];
-    const index = currentState.indexOf(content);
-    currentState[index] = content;
-    this.setState({ currentState });
+    const currentState = this.state.todoItems;
+    this.setState({ todoItems: currentState.concat(todo), textEdit: "" });
   }
 
   render() {
@@ -82,14 +79,11 @@ export default class MyTodo extends Component {
         <MyTodoList
           list={this.state.todoItems}
           handleDelete={this.handleDelete}
-          inputForm={
-            <InputForm
-              onSubmit={this.handleEdit}
-              onChange={this.onEdit}
-              value={this.state.textEdit}
-              title="+"
-            />
-          }
+          handleEdit={this.handleEdit}
+          onChange={this.onEdit}
+          value={this.state.textEdit}
+          title="+"
+          onSubmit={this.handleEdit}
         />
       </div>
     );

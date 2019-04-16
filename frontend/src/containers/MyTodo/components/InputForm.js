@@ -2,7 +2,13 @@ import React from "react";
 import TextInput from "../../../components/TextInput";
 import Button from "../../../components/Button";
 
-export default function InputForm({ value, onChange, title, onSubmit }) {
+export default function InputForm({
+  value,
+  onChange,
+  title,
+  onSubmit,
+  onClick
+}) {
   return (
     <form className="col s12" onSubmit={onSubmit}>
       <div className="row">
@@ -13,6 +19,7 @@ export default function InputForm({ value, onChange, title, onSubmit }) {
         <div className="input-field col s1">
           <Button
             title={title}
+            onClick={onClick}
             type="submit"
             className="btn-floating btn-small waves-effect waves-light"
           />
