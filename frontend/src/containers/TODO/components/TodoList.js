@@ -5,7 +5,10 @@ const List = props => {
   return (
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>My Lists</h4>
+        <div class="center">
+          {" "}
+          <h4>My Lists</h4>
+        </div>
         {props.list.map(item => (
           <TodoItem
             chooseList={props.chooseList}

@@ -5,24 +5,23 @@ import MyTodoItem from "./MyTodoItem";
 
 const List = props => {
   return (
-    <ul class="collection with-header">
-      <li class="collection-header">
-        <h4>{props.name}</h4>
-        {props.list.map(item => (
-          <MyTodoItem
-            chooseList={props.chooseList}
-            id={item.id}
-            key={item.id}
-            content={item.content}
-            createdAt={item.createdAt}
-            updatedAt={item.updatedAt}
-            handleDelete={props.handleDelete}
-            handleEdit={props.handleEdit}
-            todoId={props.todoId}
-          />
-        ))}
-      </li>
-    </ul>
+    <div>
+      <h4>{props.name}</h4>
+      {props.list.map(item => (
+        <MyTodoItem
+          chooseList={props.chooseList}
+          id={item.id}
+          key={item.id}
+          content={item.content}
+          createdAt={item.createdAt}
+          updatedAt={item.updatedAt}
+          handleDelete={props.handleDelete}
+          handleEdit={props.handleEdit}
+          todoId={props.todoId}
+          inputForm={props.inputForm}
+        />
+      ))}
+    </div>
   );
 };
 

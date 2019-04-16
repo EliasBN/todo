@@ -20,7 +20,6 @@ module.exports = app => {
     "/api/todos/:todoId/items/:todoItemId",
     todoItemsController.destroy
   );
-
   app.get("/api/todos/:todoId/todoItems", todoItemsController.list);
 
   // For any other request method on todo items, we're going to return "Method Not Allowed"

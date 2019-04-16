@@ -13,6 +13,7 @@ export default class MyTodo extends Component {
       todoItems: []
     };
     this.onChange = this.onChange.bind(this);
+    this.onEdit = this.onEdit.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
@@ -29,8 +30,12 @@ export default class MyTodo extends Component {
     this.setState({ textInput: event.target.value });
   }
 
+  onEdit(event) {
+    this.setState({ textEdit: event.target.value });
+  }
+
   async handleDelete(id) {
-    await axios.delete(`/api/todos/${id}`);
+    await axios.delete(`/api/todos/${this.props.match.params.id}/items/${id}`);
     let todoListCopy = this.state.todoItems;
     for (let i = 0; i < todoListCopy.length; i++) {
       let todo = todoListCopy[i];
@@ -52,30 +57,40 @@ export default class MyTodo extends Component {
     this.setState({ todoItems: currentState.concat(todo), textInput: "" });
   }
 
-  async handleEdit(id) {
-    const todoToEdit = this.state.textEdit;
-    const { data } = await axios.put(`/api/todo/${id}/edit`, todoToEdit);
-    const currentState = this.state.todos;
-    this.setState({ todoItems: currentState.concat(todoToEdit) });
+  async handleEdit(todo) {
+    console.log(todo);
+    todo.content = this.state.textEdit;
+    const { data } = await axios.put(
+      `/api/todos/${this.props.match.params.id}/items/${todo}`,
+      todo
+    );
+    const currentState = [...this.state.todoItems];
+    const index = currentState.indexOf(todo);
+    currentState[index] = todo;
+    this.setState({ currentState });
   }
 
   render() {
     return (
-      <div>
-        <div class="container">
-          <InputForm
-            onSubmit={this.handleAdd}
-            onChange={this.onChange}
-            value={this.state.textInput}
-            title="+"
-          />
-
-          <MyTodoList
-            list={this.state.todoItems}
-            handleDelete={this.handleDelete}
-            handleEdit={this.handleEdit}
-          />
-        </div>
+      <div class="container">
+        <InputForm
+          onSubmit={this.handleAdd}
+          onChange={this.onChange}
+          value={this.state.textInput}
+          title="+"
+        />
+        <MyTodoList
+          list={this.state.todoItems}
+          handleDelete={this.handleDelete}
+          inputForm={
+            <InputForm
+              onSubmit={this.handleEdit}
+              onChange={this.onEdit}
+              value={this.state.textEdit}
+              title="+"
+            />
+          }
+        />
       </div>
     );
   }

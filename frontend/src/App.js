@@ -19,7 +19,13 @@ export default class App extends Component {
           </ul>
           <Switch>
             <Route exact path="/todos" component={Todo} />
-            <Route path="/todos/:id/todoItems" component={MyTodo} />
+            <Route
+              exact
+              path="/todos/:id/todoItems/:todoItemId/edit"
+              component={MyTodo}
+            />
+            <Route path="/todos/:id/todoItems/" component={MyTodo} />
+
             <Route component={Notfound} />
           </Switch>
         </Router>
