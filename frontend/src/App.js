@@ -18,6 +18,10 @@ export default class App extends Component {
             </li>
           </ul>
           <Switch>
+            <Route exact path="/">
+              We can add a homepage or something here. If not we could just
+              redirect to todos.
+            </Route>
             <Route exact path="/todos" component={Todo} />
             <Route
               exact
