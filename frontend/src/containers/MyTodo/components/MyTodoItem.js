@@ -1,6 +1,5 @@
 import React from "react";
 import Popup from "reactjs-popup";
-import InputForm from "../../TODO/components/InputForm";
 import TextInput from "../../../components/TextInput";
 
 export default function MyTodoItem({
@@ -52,7 +51,9 @@ export default function MyTodoItem({
                       onClick={() => {
                         handleEdit(id);
                       }}
-                    />
+                    >
+                      <i class="material-icons"> build </i>
+                    </button>
                   </div>
                 </div>
               </form>
@@ -61,7 +62,8 @@ export default function MyTodoItem({
           <button
             className="waves-effect waves-light btn"
             onClick={() => {
-              handleDelete(id);
+              if (window.confirm("Are you sure you wish to delete this item?"))
+                handleDelete(id);
             }}
           >
             <i className="material-icons">not_interested</i>
