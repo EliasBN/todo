@@ -1,15 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function TextInput({ value, onChange, className, type, label }) {
+export default function TextInput({
+  value,
+  onChange,
+  className,
+  type,
+  label,
+  id
+}) {
   return (
     <div>
       <input
         type={type}
         value={value}
         onChange={onChange}
-        className={className}
+        class={className}
         label={label}
+        id={id}
       />
     </div>
   );
@@ -18,14 +26,15 @@ export default function TextInput({ value, onChange, className, type, label }) {
 TextInput.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
-  className: PropTypes.string,
+  class: PropTypes.string,
   type: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
+  id: PropTypes.string
 };
 
 TextInput.defaultProps = {
   value: "",
-  className: "",
+  class: "",
   type: "text",
   label: "text"
 };

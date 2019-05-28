@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Todo from "./containers/TODO/Todo";
 import MyTodo from "./containers/MyTodo/MyTodo";
 import Notfound from "./components/notFound";
-import InputForm from "./containers/TODO/components/InputForm";
+import Login from "./containers/Login/Login";
 
 export default class App extends Component {
   render() {
@@ -13,9 +13,10 @@ export default class App extends Component {
           <nav>
             <div class="nav-wrapper">
               <a href="#!" class="brand-logo center">
-                Nye Uber
+                TODO
               </a>
-              <ul class="left hide-on-med-and-down">
+
+              <ul class="left">
                 <li>
                   <Link to="/"> Home</Link>
                 </li>
@@ -25,6 +26,7 @@ export default class App extends Component {
               </ul>
             </div>
           </nav>
+
           <Switch>
             <Route exact path="/" />
             <Route exact path="/todos" component={Todo} />
@@ -38,6 +40,7 @@ export default class App extends Component {
             <Route component={Notfound} />
           </Switch>
         </Router>
+        <Login />
       </div>
     );
   }
