@@ -51,10 +51,12 @@ Example:
     This will create a table which contains each todoitem, residing in the different lists.  
       `$ sequelize model:create --name TodoItem --attributes content:string,complete:boolean`
 
+    If installing this on a windows pc you may have to add sequalize to your PATH enviroment variable. 
+    
 5. Start the application with npm start  
    `$ npm start:dev` This will run the development server referenced above
 
-6. Visit localhost:8000 to see the result.
+6. Visit localhost:3000 to see the result.
 
 
 # How it's built
