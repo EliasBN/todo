@@ -44,15 +44,19 @@ Example:
 
 4. OPTIONAL: Setup postgres database using sequalize (Taken from this tutorial: https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize)
 
-  LIST TABLE
+  This will create the table containing the different lists.
+  
    `$ sequelize model:create --name Todo --attributes title:string`
-  TODOITEM TABLE
-   `$sequelize model:create --name TodoItem --attributes content:string,complete:boolean`
+
+
+  This will create a table which contains each todoitem, residing in the different lists.
+   `$ sequelize model:create --name TodoItem --attributes content:string,complete:boolean`
 
 5. Start the application with npm start  
    `$ npm start:dev` This will run the development server referenced above
 
 6. Visit localhost:8000 to see the result.
+
 
 # How it's built
 
