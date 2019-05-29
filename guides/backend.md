@@ -44,6 +44,14 @@ Example:
 
 4. OPTIONAL: Setup postgres database using sequalize (Taken from this tutorial: https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize)
 
+    Install sequelize and postgres with npm  
+      `$ npm install --save sequelize pg pg-hstore`
+
+    Create a database  
+      `$ createdb todos-dev` 
+
+      PS: you might have to create a role or similar here if you've never configured a postgres database.  
+
     Initialize Sequelize  
       `$ sequelize init`
 
