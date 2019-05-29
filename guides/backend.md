@@ -57,7 +57,7 @@ Example:
     If installing this on a windows pc you may have to add sequalize to your PATH enviroment variable. See this guide: https://medium.com/@jzioria/how-i-fixed-my-sequelize-command-not-found-error-e3ec651b3abc?fbclid=IwAR17vDmm3NqhOc57UfRYwCVI1VKI37bhbi8C_q0mNWNczTIMtT2k-afTZHM
 
 5. Start the application with npm start  
-   `$ npm start:dev` This will run the development server referenced above
+   `$ npm run start:dev` This will run the development server referenced above
 
 6. Visit localhost:3000 to see the result.
 
