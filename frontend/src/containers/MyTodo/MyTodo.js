@@ -83,7 +83,6 @@ export default class MyTodo extends Component {
           onChange={this.onEdit}
           value={this.state.textEdit}
           title="+"
-          onSubmit={this.handleEdit}
         />
       </div>
     );

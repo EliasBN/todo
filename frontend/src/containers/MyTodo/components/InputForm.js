@@ -13,7 +13,13 @@ export default function InputForm({
     <form className="col s12" onSubmit={onSubmit}>
       <div className="row">
         <div className="input-field col s11">
-          <TextInput value={value} onChange={onChange} className="validate" />
+          <TextInput
+            value={value}
+            onChange={onChange}
+            className="validate"
+            place
+            label={label}
+          />
         </div>
 
         <div className="input-field col s1">

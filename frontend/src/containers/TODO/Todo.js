@@ -3,7 +3,7 @@ import InputForm from "./components/InputForm";
 import TodoList from "./components/TodoList";
 import axios from "axios";
 
-class Todo extends Component {
+export default class Todo extends Component {
   constructor(props) {
     super(props);
 
@@ -13,6 +13,7 @@ class Todo extends Component {
       todos: []
     };
 
+    this.onEdit = this.onEdit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -27,6 +28,9 @@ class Todo extends Component {
 
   onChange(event) {
     this.setState({ textInput: event.target.value });
+  }
+  onEdit(event) {
+    this.setState({ textEdit: event.target.value });
   }
 
   async handleDelete(id) {
@@ -50,10 +54,10 @@ class Todo extends Component {
   }
 
   async handleEdit(id) {
-    const todoToEdit = this.state.textEdit;
-    const { data } = await axios.put(`/api/todo/${id}/edit`, todoToEdit);
+    let obj = { title: this.state.textEdit };
+    const { data: todo } = await axios.put(`/api/todos/${id}`, obj);
     const currentState = this.state.todos;
-    this.setState({ todos: currentState.concat(todoToEdit) });
+    this.setState({ todos: currentState.concat(todo), textEdit: "" });
   }
 
   async chooseList(id) {
@@ -62,25 +66,24 @@ class Todo extends Component {
 
   render() {
     return (
-      <div>
-        <div class="container">
-          <InputForm
-            onSubmit={this.handleAdd}
-            onChange={this.onChange}
-            value={this.state.textInput}
-            title="+"
-          />
+      <div class="container">
+        <InputForm
+          onSubmit={this.handleAdd}
+          onChange={this.onChange}
+          value={this.state.textInput}
+          title="+"
+          label="Test"
+        />
 
-          <TodoList
-            list={this.state.todos}
-            handleDelete={this.handleDelete}
-            handleEdit={this.handleEdit}
-            chooseList={this.chooseList}
-          />
-        </div>
+        <TodoList
+          list={this.state.todos}
+          handleDelete={this.handleDelete}
+          handleEdit={this.handleEdit}
+          chooseList={this.chooseList}
+          onChange={this.onEdit}
+          value={this.state.textEdit}
+        />
       </div>
     );
   }
 }
-
-export default Todo;
