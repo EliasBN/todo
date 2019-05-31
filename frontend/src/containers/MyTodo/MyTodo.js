@@ -10,13 +10,17 @@ export default class MyTodo extends Component {
     this.state = {
       textInput: "",
       textEdit: "",
-      todoItems: []
+      todoItems: [],
+      myData: [],
+      count: 0
     };
+
     this.onChange = this.onChange.bind(this);
     this.onEdit = this.onEdit.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.sortItems = this.sortItems.bind(this);
   }
 
   async componentDidMount() {
@@ -67,7 +71,31 @@ export default class MyTodo extends Component {
     this.setState({ todoItems: currentState.concat(todo), textEdit: "" });
   }
 
+  sortItems() {
+    const myData = this.state.todoItems
+      .sort(function(a, b) {
+        if (
+          a.content.toString().toLowerCase() >
+          b.content.toString().toLowerCase()
+        )
+          return -1;
+        if (
+          a.content.toString().toLowerCase() <
+          b.content.toString().toLowerCase()
+        )
+          return 1;
+        return 0;
+      })
+      .map(
+        item =>
+          console.log(item.content) + <div key={item.id}>{item.content}</div>
+      );
+
+    this.setState({ todoItems: myData });
+  }
+
   render() {
+    const numTodos = this.state.todoItems.length;
     return (
       <div class="container">
         <InputForm
@@ -84,6 +112,8 @@ export default class MyTodo extends Component {
           value={this.state.textEdit}
           title="+"
         />
+        <button onClick={this.sortItems}>sort</button>
+        <p>Number of Todos = {numTodos}</p>
       </div>
     );
   }
