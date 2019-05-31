@@ -4,6 +4,7 @@ import Todo from "../containers/TODO/Todo";
 import MyTodo from "../containers/MyTodo/MyTodo";
 import Notfound from "./notFound";
 import Login from "../containers/Login/Login";
+import Homepage from "./Homepage";
 
 export default class Routes extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class Routes extends Component {
           </nav>
 
           <Switch>
-            <Route exact path="/" />
+            <Route exact path="/" component={Homepage} />
             <Route exact path="/todos" component={Todo} />
             <Route path="/login" component={Login} />
             <Route

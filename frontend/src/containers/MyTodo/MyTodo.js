@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import MyTodoList from "./components/MyTodoList";
 import InputForm from "../TODO/components/InputForm";
-import sort from "../../functions/helpers";
 
 export default class MyTodo extends Component {
   constructor(props) {
@@ -123,6 +122,26 @@ export default class MyTodo extends Component {
             const myData = this.state.todoItems;
             myData
               .sort(function(a, b) {
+                if (a.createdAt > b.createdAt) return -1;
+                if (a.createdAt < b.createdAt) return 1;
+                return 0;
+              })
+              .map(
+                item =>
+                  console.log(item.createdAt) +
+                  "<div key={item.id}>{item.createdAt}</div>"
+              );
+            this.setState({ todoItems: myData });
+          }}
+        >
+          Newest first
+        </button>
+
+        <button
+          onClick={() => {
+            const myData = this.state.todoItems;
+            myData
+              .sort(function(a, b) {
                 if (a.createdAt > b.createdAt) return 1;
                 if (a.createdAt < b.createdAt) return -1;
                 return 0;
@@ -130,12 +149,12 @@ export default class MyTodo extends Component {
               .map(
                 item =>
                   console.log(item.createdAt) +
-                  "<div key={item.id}>{item.content}</div>"
+                  "<div key={item.id}>{item.createdAt}</div>"
               );
             this.setState({ todoItems: myData });
           }}
         >
-          Sort by Date
+          Oldest first
         </button>
 
         <p>Number of Todos = {numTodos}</p>

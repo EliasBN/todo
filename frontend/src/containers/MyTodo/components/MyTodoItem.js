@@ -22,6 +22,7 @@ export default function MyTodoItem({
         <div className="col s11">
           <span className="flow-text">
             <p className="flow-text center">{content}</p>
+            <p>{createdAt}</p>
           </span>
         </div>
         <div className="col s1">
