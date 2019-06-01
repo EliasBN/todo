@@ -27,18 +27,14 @@ export default class Routes extends Component {
                   <Link to="/todos/"> My Lists</Link>
                 </li>
               </ul>
-              <ul class="right">
-                <li>
-                  <Link to="/login/">Login</Link>
-                </li>
-              </ul>
+              
             </div>
           </nav>
 
           <Switch>
             <Route exact path="/" />
             <Route exact path="/todos" component={Todo} />
-            <Route path="/login" component={Login} />
+            
             <Route
               exact
               path="/todos/:id/todoItems/:todoItemId/"
