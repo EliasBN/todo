@@ -1,5 +1,9 @@
 # Getting started with the Node.js backend
 
+Prerequisites: 
+Postgres: https://www.postgresql.org/
+Node: https://nodejs.org/en/
+
 ## Building and running the Node backend locally
 
 1. Clone the project from https://github.com/EliasBN/todo
