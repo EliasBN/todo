@@ -20,11 +20,15 @@ export default class MyTodo extends Component {
     this.handleEdit = this.handleEdit.bind(this);
   }
 
-  async componentDidMount() {
-    const { data: todoItems } = await axios.get(
-      `/api/todos/${this.props.match.params.id}/todoItems`
-    );
-    this.setState({ todoItems });
+  async sortItems() {
+    const myData = this.state.todoItems.sort(function(a, b) {
+        if (a.item.toLowerCase() > b.item.toLowerCase()) return -1;
+        if (a.item.toLowerCase() < b.item.toLowerCase()) return 1;
+        return 0;
+      })
+      .map(item => <div key={item.key}>{item.content}</div>);
+
+    this.setState({ todoItems: myData });
   }
 
   onChange(event) {
@@ -74,8 +78,11 @@ export default class MyTodo extends Component {
           handleEdit={this.handleEdit}
           onChange={this.onEdit}
           value={this.state.textEdit}
+          
           title="+"
         />
+        <button onClick={this.sortItems}>sort</button>
+
       </div>
     );
   }
