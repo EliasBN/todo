@@ -7,9 +7,6 @@ import Login from "../containers/Login/Login";
 import Homepage from "./Homepage";
 
 export default class Routes extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
