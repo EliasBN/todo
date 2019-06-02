@@ -73,6 +73,8 @@ Example:
 
 6. Visit localhost:8000 to see the result.
 
+7. Setup the [frontend](https://github.com/EliasBN/todo/wiki/Guide-to-Frontend)  
+
 
 # How it's built
 
