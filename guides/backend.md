@@ -1,6 +1,6 @@
 # Getting started with the Node.js backend
 
-Prerequisites: 
+Prerequisites:   
 Postgres: https://www.postgresql.org/  
 Node: https://nodejs.org/en/
 
