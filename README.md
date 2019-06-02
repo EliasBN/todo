@@ -3,7 +3,7 @@
 
 # TODO-List
 
-This is an open-source todolist. It was created for a subject at the Norwegian University of Agder, where the goal was creating something with only open-source components. The application uses React for frontend, with node and express making out the backend, together with a Postgresql database. Our goal is to make this application easy for anyone else to build on, something we will accomplish by both making it easily accessable through this github page, with tutorials on how new users can both use, and contribute to the project.
+This is an open-source todolist. It was created for a subject at the Norwegian University of Agder, where the goal was creating something with only open-source components. The application uses React for frontend, with Node and Express making out the backend, together with a PostgreSQL database. Our goal is to make this application easy for anyone else to build on, something we will accomplish by both making it easily accessable through this Github page, with tutorials on how new users can both use, and contribute to the project.
 
 This project has been started by the following collaborators:
 
