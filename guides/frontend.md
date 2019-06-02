@@ -13,7 +13,11 @@
 3. Install all dependencies using NPM
    `npm install`
 
-4. Run a local development server
+4. If using the backend we've created navigate into package.json and add  
+`"proxy": "http://localhost:8000"`  
+You can of course change this to whatever port your backend is currently running on. 
+
+5. Run a local development server
    `npm start`
 
 This is everything you need to do if you want to run the application. If you however want to also setup your application with "proper" Crud and database connectivity then you can follow the [backend-guide](https://github.com/EliasBN/todo/blob/elias/guides/backend.md).
