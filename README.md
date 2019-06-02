@@ -1,22 +1,19 @@
+[![npm version](https://badge.fury.io/js/react.svg)](https://badge.fury.io/js/react)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # TODO-List
-This is a completely open-source todolist. It is created as a project for a subject at the Norwegian University of Agder. The application itself is written entirely in javascript, with React being used for the frontend, and node and Express for the backend. 
 
-Please visit [getting started](github.com/EliasBN/todo) if you want to learn more.
-## Building and running the application locally
-1. Clone the project. 
-2. Install dependencies with npm install
-3. Start the application with npm start
-4. Visit localhost:8080 to see the result. 
+This is an open-source todolist. It was created for a subject at the Norwegian University of Agder, where the goal was creating something with only open-source components. The application uses React for frontend, with node and express making out the backend, together with a Postgresql database. Our goal is to make this application easy for anyone else to build on, something we will accomplish by both making it easily accessable through this github page, with tutorials on how new users can both use, and contribute to the project.
 
-## How to Commit to project
-Individual branch: When working on a new feature you will work on your own branch. When the feature is ready you will merge the development branch into your individual branch. You will then clean up any conflicts in your own branch, before you can suggest your feature for the project. This ensures that the development branch remains clean. 
+This project has been started by the following collaborators:
 
-Development Branch: Can only get pushed to when two other group members have approved the commit. If something is not good enough the code has to get refactored according to the wishes of the other members, and then it will go through another round of Q/A. 
+- [Erik Urdal Gundersen](https://github.com/Erikug)   
+- [Elias Berg Nordheim](https://github.com/EliasBN)   
+- [Victor Prestholm](https://github.com/Prestholm)  
+- [Henning Van Ta](https://github.com/Henningermaskin)  
 
-Master branch: only gets pushed to from the development branch when everything is working properly.
+If you want to know more check out our [wiki](https://github.com/EliasBN/todo/wiki)
 
+## What the application currently looks like
 
-Software: 
-Visual Studio Code with prettier for code structure. 
-
-How to commit to our project: 
+![alt text](https://scontent-arn2-1.xx.fbcdn.net/v/t1.15752-9/61830869_1057901791086120_2035543146565206016_n.png?_nc_cat=107&_nc_ht=scontent-arn2-1.xx&oh=603d957a59976633614560abe209eb74&oe=5D5DCB97)
