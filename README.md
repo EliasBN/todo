@@ -14,7 +14,7 @@ This project has been started by the following collaborators:
 
 If you want to know more check out our [Wiki](https://github.com/EliasBN/todo/wiki).
 
-## Purpose of project
+## Purpose of the project
 The reason why we chose to create this todolist, and why we wanted to make it open source, is that it's a great way for new developers to get into JavaScript, especially Node(backend) and React (frontend). Developing the application open source with an MIT licence means that other people are free to implement this list into their own projects. In addition, a todolist can always be nice to have, and for developers it can be especially fun to experience what it feels like to personally help develop something which you can use every single day.  
 
 ## What the application currently looks like
