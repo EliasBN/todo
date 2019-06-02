@@ -7,10 +7,10 @@ This is an open-source todolist. It was created for a subject at the Norwegian U
 
 This project has been started by the following collaborators:
 
-[Erik Urdal Gundersen](https://github.com/Erikug)   
-[Elias Berg Nordheim](https://github.com/EliasBN)   
-[Victor Prestholm](https://github.com/Prestholm)  
-[Henning Van Ta](https://github.com/Henningermaskin)  
+- [Erik Urdal Gundersen](https://github.com/Erikug)   
+- [Elias Berg Nordheim](https://github.com/EliasBN)   
+- [Victor Prestholm](https://github.com/Prestholm)  
+- [Henning Van Ta](https://github.com/Henningermaskin)  
 
 If you want to know more check out our [wiki](https://github.com/EliasBN/todo/wiki)
 
