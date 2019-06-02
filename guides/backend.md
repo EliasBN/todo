@@ -1,7 +1,7 @@
 # Getting started with the Node.js backend
 
 Prerequisites: 
-Postgres: https://www.postgresql.org/
+Postgres: https://www.postgresql.org/  
 Node: https://nodejs.org/en/
 
 ## Building and running the Node backend locally
@@ -17,7 +17,8 @@ Node: https://nodejs.org/en/
    navigate to the cloned directory using the command-line. Then run  
    `$ npm install`
 
-3. Setup postgres database using sequalize (Taken from this tutorial: https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize)
+3. Setup postgres database using sequalize   
+(Taken from this tutorial: https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize)
 
     Create a database  
       `$ createdb todos-dev` 
