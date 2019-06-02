@@ -17,13 +17,13 @@ export default function MyTodoItem({
   keys
 }) {
   return (
-    <div className="row">
-      <div className="col s11">
+    <div className="card-panel">
+      <div>
         <span className="flow-text">
-          <p className="flow-text center">{content}</p>
+          <p className="flow-text center blue-text">{content}</p>
         </span>
       </div>
-      <div className="col s1">
+      <div>
         <Popup
           trigger={
             <button className="waves-effect waves-light btn">
@@ -56,15 +56,17 @@ export default function MyTodoItem({
             </form>
           }
         </Popup>
-        <button
-          className="waves-effect waves-light btn"
-          onClick={() => {
-            if (window.confirm("Are you sure you wish to delete this item?"))
-              handleDelete(id);
-          }}
-        >
-          <i className="material-icons">not_interested</i>
-        </button>
+        <div>
+          <button
+            className="waves-effect waves-light btn"
+            onClick={() => {
+              if (window.confirm("Are you sure you wish to delete this item?"))
+                handleDelete(id);
+            }}
+          >
+            <i className="material-icons">not_interested</i>
+          </button>
+        </div>
       </div>
     </div>
   );
