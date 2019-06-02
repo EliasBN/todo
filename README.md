@@ -14,7 +14,3 @@ If you want to contribute to the project this can be done by both trying it out 
 To ensure good quality there are some precautions that we take when it comes to others contributing. As of now, every pull request must be accepted by at least two members of our original little team. This will of course change in the future if we get some good, "outside" collaborators, but that is the way it is now. If there are things that could be improved in the pull-request, then these have to be fixed before you do another one.
 
 Once a pull-request is accepted the new feature will live on the experimental branch. Here we will do more testing and possible polishing, before moving it on to the development branch where most of the decent, working code will be located. The master branch will only be used to store things we consider "release" ready.
-
-If you want to learn more about the React frontend application then you can visit [frontend](https://github.com/EliasBN/todo/blob/elias/guides/frontend.md)
-
-If you want to learn more about the Node.js and express application then you can visit [backend](https://github.com/EliasBN/todo/blob/elias/guides/backend.md)
