@@ -19,4 +19,4 @@ The reason why we chose to create this todolist, and why we wanted to make it op
 
 ## What the application currently looks like
 
-![alt text](https://scontent-arn2-1.xx.fbcdn.net/v/t1.15752-9/61830869_1057901791086120_2035543146565206016_n.png?_nc_cat=107&_nc_ht=scontent-arn2-1.xx&oh=603d957a59976633614560abe209eb74&oe=5D5DCB97)
+![alt text](https://camo.githubusercontent.com/666750d9c1f2c933c9d8749ffb859ff4c7b04aa0/68747470733a2f2f692e6779617a6f2e636f6d2f64366664623664306133663835343435643466656335363265326233616365392e706e67)
